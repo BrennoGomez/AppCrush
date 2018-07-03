@@ -1,0 +1,25 @@
+<!--
+  Generated template for the CrushPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content padding>
+    <ion-list>
+
+
+        <ion-list>
+            <ion-item *ngFor="let c of dados | async">
+              <ion-avatar item-start>
+                <img src="../../assets/imgs/cor.jpg">
+              </ion-avatar>
+              <h2>{{c.fname}} &{{c.sname}}</h2>
+              <p>São Compativeis em {{c.pepercentage}} %</p>
+            </ion-item>
+          </ion-list>
+      </ion-list>
+
+</ion-content>

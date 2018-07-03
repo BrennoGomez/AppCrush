@@ -1,0 +1,46 @@
+<ion-content padding>
+
+  <div>
+    <h2>Calcule a compatibilidade entre o casal:</h2>
+  </div>
+
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label stacked>Ele</ion-label>
+      <ion-input type="text" formControlName="fname" [(ngModel)]="fname"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.fname.valid && (form.controls.fname.dirty || form.controls.fname.touched)" color="danger">
+      <div [hidden]="!form.controls.fname.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Ela</ion-label>
+      <ion-input type="text" formControlName="sname" [(ngModel)]="sname"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.sname.valid && (form.controls.sname.dirty || form.controls.sname.touched)" color="danger">
+      <div [hidden]="!form.controls.sname.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!form.valid" (click)="get()" color="danger">Calcular</button>
+    </div>
+  </form>
+
+
+  <div *ngIf="dados" [hidden]=visao>
+  <div id="wrapper" text-center>
+    <div class="heart" id="pink">
+      <div> <h4>{{dados.fname}} & {{dados.sname}}</h4></div>
+    </div>
+  </div>
+
+  <h2>São Compativeis em {{dados.percentage}} %</h2>
+</div>
+
+
+</ion-content>

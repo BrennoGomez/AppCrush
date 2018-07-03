@@ -1,0 +1,95 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cadastro de Usuários</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="bg">
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col style="text-align:center">
+        <form #form="ngForm" novalidate>
+          <ion-list>
+
+            <ion-item class="cordefundo">
+              <ion-label stacked>Nome</ion-label>
+              <ion-input type="text" name="nome" [(ngModel)]="user.nome" #email="ngModel" required></ion-input>
+            </ion-item>
+
+
+
+            <ion-item class="cordefundo">
+              <ion-label stacked>E-mail</ion-label>
+              <ion-input type="text" name="email" [(ngModel)]="user.email" #email="ngModel" required></ion-input>
+            </ion-item>
+            <ion-item *ngIf="email.errors && (email.dirty || email.touched)" class="text-danger">
+              O campo é obrigatório
+            </ion-item>
+
+            <ion-item class="cordefundo">
+              <ion-label stacked>Senha</ion-label>
+              <ion-input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
+            </ion-item>
+            <ion-item *ngIf="password.errors && (password.dirty || password.touched)" class="text-danger">
+              O campo é obrigatório
+            </ion-item>
+
+
+          </ion-list>
+          <ion-col style="text-align:center">
+            <button class="botao botaocadastrar" block color="primary" [disabled]="!form.form.valid" (click)="cadastrar()">
+              CADASTRAR
+            </button>
+          </ion-col>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="inactive underlineHover" (click)="login()"> Sign In </h2>
+        
+        <h2 class=" active" >Sign Up </h2>
+      
+    
+       
+    
+        <!-- Login Form -->
+       
+        <form #form="ngForm" novalidate>
+            
+  
+              <ion-item class="cordefundo">
+                <ion-label stacked>Nome</ion-label>
+                <ion-input type="text" name="nome" [(ngModel)]="user.nome" #email="ngModel" required></ion-input>
+              </ion-item>
+  
+  
+  
+              <ion-item class="cordefundo">
+                <ion-label stacked>E-mail</ion-label>
+                <ion-input type="text" name="email" [(ngModel)]="user.email" #email="ngModel" required></ion-input>
+              </ion-item>
+              <ion-item *ngIf="email.errors && (email.dirty || email.touched)" class="text-danger">
+                O campo é obrigatório
+              </ion-item>
+  
+              <ion-item class="cordefundo">
+                <ion-label stacked>Senha</ion-label>
+                <ion-input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
+              </ion-item>
+              <ion-item *ngIf="password.errors && (password.dirty || password.touched)" class="text-danger">
+                O campo é obrigatório
+              </ion-item>
+  
+              <input type="button" class="" value="Cadastrar" [disabled]="!form.form.valid" (click)="cadastrar()">
+            </form>
+    
+      </div>
+    </div>
+
+</ion-content>

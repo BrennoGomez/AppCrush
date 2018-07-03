@@ -1,0 +1,52 @@
+<ion-content padding class="bg">
+ 
+
+  <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> Sign In </h2>
+        
+        <h2 class="inactive underlineHover"  (click)="cadastrar()">Sign Up </h2>
+      
+    
+        <!-- Icon -->
+        <div class="fadeIn first">
+          <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+        </div>
+    
+        <!-- Login Form -->
+       
+        <form #form="ngForm" novalidate>
+           
+  
+              <ion-item class="cordefundo">
+                <ion-label stacked>E-mail</ion-label>
+                <ion-input type="text" name="email" [(ngModel)]="user.email" #email="ngModel" required></ion-input>
+              </ion-item>
+              <ion-item *ngIf="email.errors && (email.dirty || email.touched)" class="text-danger">
+                O campo é obrigatório
+              </ion-item>
+  
+  
+              <ion-item class="cordefundo">
+                <ion-label stacked>Senha</ion-label>
+                <ion-input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
+              </ion-item>
+              <ion-item *ngIf="password.errors && (password.dirty || password.touched)" class="text-danger">
+                O campo é obrigatório
+              </ion-item>
+  
+           
+  
+
+            <input type="button" class="" value="Log In" [disabled]="!form.form.valid" (click)="login()">
+          </form>
+        
+    
+        <!-- Remind Passowrd -->
+        
+    
+      </div>
+    </div>
+
+</ion-content>
