@@ -15,6 +15,13 @@
       </div>
     </ion-item>
 
+    <ion-content padding>
+      <button ion-button outline block (click)="takepic()">
+          Tire uma foto
+      </button>
+        <img src="{{ picurl }}" />
+    </ion-content>
+
     <ion-item>
       <ion-label stacked>Ela</ion-label>
       <ion-input type="text" formControlName="sname" [(ngModel)]="sname"></ion-input>
